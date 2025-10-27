@@ -1,0 +1,6 @@
+# Ignorar configurações do VS Code
+.vscode/
+
+# Ignorar arquivos de dados
+grade.dat
+grade.txt
