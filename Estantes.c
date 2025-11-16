@@ -315,10 +315,13 @@ void listarEstanteEspecifica() {
         printf("Nenhuma estante cadastrada.\n");
         return;
     }
-
+    setColor(6);
     printf("Escolha a estante (1 a %d):\n", qtdEstantes);
     for (int i = 0; i < qtdEstantes; i++) {
-        printf("%d. %s\n", i + 1, estantes[i].nome);
+        setColor(1);
+        printf("%d. ", i + 1);
+        setColor(7);
+        printf("%s\n", estantes[i].nome);
     }
 
     int opc;
@@ -351,7 +354,10 @@ void listarEstanteEspecifica() {
             printf("Nenhum item nesta prateleira.\n");
         } else {
             for (int k = 0; k < p->qtdItens; k++) {
-                printf("%d. %s\n", k + 1, p->itens[k].nome);
+                setColor(1);
+                printf("%d. ", k + 1);
+                setColor(7);
+                printf("%s\n", p->itens[k].nome);
             }
         }
     }
@@ -362,10 +368,13 @@ void listarPrateleiraEspecifica() {
         printf("Nenhuma estante cadastrada.\n");
         return;
     }
-
+    setColor(6);
     printf("Escolha a estante (1 a %d):\n", qtdEstantes);
     for (int i = 0; i < qtdEstantes; i++) {
-        printf("%d. %s\n", i + 1, estantes[i].nome);
+        setColor(1);
+        printf("%d.", i+1);
+        setColor(7);
+        printf(" %s\n", estantes[i].nome);
     }
 
     int estOpc;
@@ -384,10 +393,13 @@ void listarPrateleiraEspecifica() {
         printf("Nenhuma prateleira nesta estante.\n");
         return;
     }
-
+    setColor(6);
     printf("\nEscolha a prateleira (1 a %d):\n", e->qtdPrateleiras);
     for (int j = 0; j < e->qtdPrateleiras; j++) {
-        printf("%d. %s\n", j + 1, e->prateleiras[j].nome);
+        setColor(1);
+        printf("%d. ", j + 1);
+        setColor(7);
+        printf("%s\n", e->prateleiras[j].nome);
     }
 
     int prOpc;
@@ -403,7 +415,7 @@ void listarPrateleiraEspecifica() {
     Prateleira *p = &e->prateleiras[prOpc];
 
     setColor(6);
-    printf("\n===== ESTANTE: %s =====\n", e->nome);
+    printf("\n   ===== ESTANTE: %s =====\n", e->nome);
     printf("===== PRATELEIRA: %s =====\n", p->nome);
     setColor(7);
 
@@ -413,7 +425,10 @@ void listarPrateleiraEspecifica() {
     }
 
     for (int k = 0; k < p->qtdItens; k++) {
-        printf("%d. %s\n", k + 1, p->itens[k].nome);
+        setColor(1);
+        printf("%d.", k + 1);
+        setColor(7);
+        printf(" %s\n", p->itens[k].nome);
     }
 }
 
